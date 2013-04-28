@@ -1,6 +1,7 @@
 
 require 'yaml'
 
+gem_package "json"
 gem_package "dyndnsd"
 
 cookbook_file "/etc/init.d/dyndnsd" do
@@ -19,7 +20,7 @@ end
 
 def to_ruby(source)
   case source
-  when Hash
+  when Hash,Mash,Chef::Node::Attribute
     out = {}
     source.each { |k,v| out[k] = to_ruby(v) }
     out
