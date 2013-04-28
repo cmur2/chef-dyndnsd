@@ -7,6 +7,9 @@ describe 'dyndnsd::logrotate' do
   end
 
   let(:chef_run) do
+    chef_runner.node.set['dyndnsd'] = {
+      'logfile' => '/var/log/dyndnsd.log'
+    }
     chef_runner.converge 'logrotate', 'dyndnsd::logrotate'
   end
 
