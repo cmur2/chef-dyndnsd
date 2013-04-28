@@ -7,6 +7,28 @@ describe 'dyndnsd::default' do
   end
 
   let(:chef_run) do
+    chef_runner.node.set['dyndnsd'] = {
+      'logfile' => '/var/log/dyndnsd.log',
+      'domain' => 'example.org',
+      'updater' => {
+        'name' => 'command_with_bind_zone',
+        'params' => {
+          'zone_file' => 'dyn.zone',
+          'command' => 'echo',
+          'ttl' => '5m',
+          'dns' => 'dns.example.org.',
+          'email_addr' => 'admin.example.org.'
+        }
+      },
+      'users' => {
+        'foo' => {
+          'password' => 'secret',
+          'hosts' => [
+            'foo.example.org'
+          ]
+        }
+      }
+    }
     chef_runner.converge 'dyndnsd::default'
   end
 

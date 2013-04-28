@@ -17,8 +17,23 @@ directory "/opt/dyndnsd" do
   recursive true
 end
 
+def to_ruby(source)
+  case source
+  when Hash
+    out = {}
+    source.each { |k,v| out[k] = to_ruby(v) }
+    out
+  when Array
+    source.map { |e| to_ruby(e) }
+  else
+    source
+  end
+end
+
+dyndnsd_config = YAML.dump(to_ruby(node['dyndnsd']))
+
 file "/opt/dyndnsd/config.yaml" do
-  content YAML.dump(node['dyndnsd'])
+  content dyndnsd_config
   owner "root"
   group "root"
   mode 00644
