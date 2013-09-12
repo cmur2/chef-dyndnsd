@@ -4,11 +4,14 @@ require 'yaml'
 gem_package "json"
 gem_package "dyndnsd"
 
-cookbook_file "/etc/init.d/dyndnsd" do
-  source "dyndnsd.init"
+template "/etc/init.d/dyndnsd" do
+  source "dyndnsd.init.erb"
   owner "root"
   group "root"
   mode 00755
+  variables ({
+    :daemon => node['dyndnsd_daemon_binary']
+  })
 end
 
 directory "/opt/dyndnsd" do
