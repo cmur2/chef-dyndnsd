@@ -29,6 +29,7 @@ describe 'dyndnsd::default' do
         }
       }
     }
+    chef_runner.node.automatic_attrs['platform_family'] = 'debian'
     chef_runner.converge 'dyndnsd::default'
   end
 
