@@ -6,6 +6,8 @@ description      "Installs dyndnsd.rb as gem and configures it."
 long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version          "1.2.0"
 
+depends "build-essential"
+
 suggests "logrotate" # for dyndnsd::logrotate
 
 supports "debian"

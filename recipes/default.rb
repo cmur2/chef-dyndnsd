@@ -1,6 +1,8 @@
 
 require 'yaml'
 
+include_recipe "build-essential"
+
 gem_package "json"
 gem_package "dyndnsd"
 
