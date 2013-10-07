@@ -41,6 +41,10 @@ describe 'dyndnsd::default' do
     expect(chef_run).to create_file_with_content "/opt/dyndnsd/config.yaml", ""
   end
   
+  it 'creates an init.d script' do
+    expect(chef_run).to create_file_with_content "/etc/init.d/dyndnsd", ""
+  end
+  
   it 'enables and starts dyndnsd' do
     expect(chef_run).to start_service "dyndnsd"
     expect(chef_run).to set_service_to_start_on_boot "dyndnsd"
