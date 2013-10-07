@@ -4,7 +4,7 @@
 
 ## Description
 
-Installs dyndnsd.rb as gem and configures it from `node['dyndnsd']`.
+Installs [dyndnsd.rb](https://github.com/cmur2/dyndnsd) as gem and configures it from `node['dyndnsd']`.
 
 ## Usage
 
