@@ -37,7 +37,7 @@ case "$1" in
     log_end_msg $?
     ;;
   *)
-    echo "Usage: $0 {start|stop|restart|force-reload}" >&2
-    exit 1
+    log_action_msg "Usage: $0 {start|stop|restart|force-reload}"
+    exit 2
     ;;
 esac
