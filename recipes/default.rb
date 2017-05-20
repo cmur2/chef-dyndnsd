@@ -6,6 +6,11 @@ include_recipe "build-essential"
 gem_package "json"
 gem_package "dyndnsd"
 
+execute "systemctl-daemon-reload" do
+  command "systemctl daemon-reload || true"
+  action :nothing
+end
+
 template "/etc/init.d/dyndnsd" do
   source "dyndnsd.init.erb"
   owner "root"
@@ -14,6 +19,8 @@ template "/etc/init.d/dyndnsd" do
   variables ({
     :daemon => node['dyndnsd_daemon_binary']
   })
+  notifies :run, "execute[systemctl-daemon-reload]", :immediately
+  notifies :restart, "service[dyndnsd]"
 end
 
 directory "/opt/dyndnsd" do
