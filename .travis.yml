@@ -1,15 +1,8 @@
 language: ruby
-
 rvm:
-  - 1.9.3
-
-gemfile:
-  - Gemfile
-  - spec/support/gemfiles/Gemfile.chef11
+  - 2.5
+  - 2.4
+  - 2.3
 
 env:
   - RUBYOPT=W0
-
-before_script:
-  - ln -s chef-dyndnsd ../dyndnsd
-  - cd spec/support/; librarian-chef install; cd ../..
