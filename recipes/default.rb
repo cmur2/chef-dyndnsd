@@ -4,7 +4,10 @@ require 'yaml'
 include_recipe "build-essential"
 
 gem_package "json"
-gem_package "dyndnsd"
+
+gem_package "dyndnsd" do
+  version node['dyndnsd_version'] if node.has_key?('dyndnsd_version')
+end
 
 execute "systemctl-daemon-reload" do
   command "systemctl daemon-reload || true"
