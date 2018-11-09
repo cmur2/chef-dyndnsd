@@ -5,4 +5,5 @@ site 'https://supermarket.chef.io/api/v1'
 cookbook 'dyndnsd', path: '.'
 
 cookbook 'logrotate'
+cookbook 'seven_zip', '< 3.0.0' # pin manually before build-essential to retain Chef 12 support
 cookbook 'build-essential'
