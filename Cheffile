@@ -6,4 +6,5 @@ cookbook 'dyndnsd', path: '.'
 
 cookbook 'logrotate'
 cookbook 'seven_zip', '< 3.0.0' # pin manually before build-essential to retain Chef 12 support
+cookbook 'windows', '< 5.2.3' # pin manually before build-essential to retain Chef 12 support
 cookbook 'build-essential'
