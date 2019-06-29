@@ -1,6 +1,6 @@
 # chef-dyndnsd
 
-[![Build Status](https://travis-ci.org/cmur2/chef-dyndnsd.png)](https://travis-ci.org/cmur2/chef-dyndnsd)
+[![Build Status](https://api.travis-ci.org/cmur2/chef-dyndnsd.svg?branch=master)](https://travis-ci.org/cmur2/chef-dyndnsd)
 
 ## Description
 
