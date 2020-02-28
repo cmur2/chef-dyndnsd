@@ -1,6 +1,6 @@
 # chef-dyndnsd
 
-[![Build Status](https://api.travis-ci.org/cmur2/chef-dyndnsd.svg?branch=master)](https://travis-ci.org/cmur2/chef-dyndnsd)
+[![Build Status](https://api.travis-ci.org/cmur2/chef-dyndnsd.svg?branch=master)](https://travis-ci.org/cmur2/chef-dyndnsd) [![Depfu](https://badges.depfu.com/badges/45d403476bfea8df3eefdf249eb96d92/overview.svg)](https://depfu.com/github/cmur2/chef-dyndnsd?project_id=4732)
 
 ## Description
 
@@ -14,7 +14,7 @@ Use `recipe[dyndnsd::default]` to get dyndnsd.rb installed including an init scr
 
 ### Platform
 
-It should work on all *nix systems providing Ruby 1.8 or higher.
+It should work on all \*nix systems providing Ruby 1.8 or higher.
 
 ## Recipes
 
